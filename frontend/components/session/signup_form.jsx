@@ -1,35 +1,43 @@
 import React from 'react';
 
-class LoginForm extends React.Component {
+class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      name: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    this.props.login(this.state)
-      .then(() => this.props.closeModal());
   }
 
   update(field) {
     return event => this.setState({ [field]: event.currentTarget.value });
   }
 
+  handleSubmit(event) {
+    event.preventDefault();
+    this.props.signup(this.state)
+      .then(() => this.props.closeModal());
+  }
+
   render() {
+
     const { openModal } = this.props;
+
     return (
       <>
         <header className="modal-header">
-          <h1>Welcome back!</h1>
-          {/* <h2>Time to plan another camping trip</h2> */}
+          <h1>Join Stockflow</h1>
+          {/* <h2>Discover camping in your area</h2> */}
         </header>
-        <form id="login-form" onSubmit={this.handleSubmit}>
+        <form id="signup-form" onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            placeholder="Name"
+            value={this.state.name}
+            onChange={this.update('name')} />
           <input
             type="email"
             placeholder="Email address"
@@ -40,14 +48,14 @@ class LoginForm extends React.Component {
             placeholder="Password"
             value={this.state.password}
             onChange={this.update('password')} />
-          <button>Log In</button>
+          <button>Join Stockflow</button>
         </form>
         <footer className="modal-footer">
-          <h2>Don't have a Stockflow account? <button onClick={() => openModal({ window: 'signup' })}>Sign up!</button></h2>
+          <h2>Already have an account? <button onClick={() => openModal({ window: 'login' })}>Log in!</button></h2>
         </footer>
       </>
     )
   }
 }
 
-export default LoginForm;
+export default SignupForm;
