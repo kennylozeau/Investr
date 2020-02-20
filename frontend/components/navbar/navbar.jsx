@@ -32,7 +32,7 @@ class NavBar extends React.Component {
       return (
         <nav className="nav-header">
           <h2 id="logo"><a href="/" >STOCKFLOW</a></h2>
-          <button className="login" onClick={() => this.handleLogout()}>Log in</button>
+          <button className="login" onClick={() => this.handleLogout()}>Log out</button>
         </nav>
       )
     } else {
