@@ -1,0 +1,128 @@
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 10;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 30px;
+}
+
+.signup {
+  /* background-color: red; */
+  /* box-sizing: border-box; */
+  /* SET DISPLAY TO INLINE-BLOCK WHEN YOU KNOW HOW TO CENTER IT (GET HEIGHT BACK) */
+  display: inline-block;
+  border: 3px solid #40d9ac;
+  /* width: 52px; */
+  /* Peter helped me: Turn off height and add more vertical padding */
+  /* inline elements don't take vertical padding into account */
+  /* height: 25px; */
+  /* padding: 7px 12px; */
+  padding: 12px 12px;
+  margin: 10px;
+  /* margin-left: 25px; */
+  font-size: 15px;
+  color: #40d9ac;
+  background-color: white;
+  transition: background-color 0.4s ease 0s, color 0.4s ease 0s;
+  /* vertical-align: middle; */
+  /* WHY DOES THIS NOT WORK? */
+}
+
+.signup:hover {
+  background-color: #73dfb7;
+  color: white;
+}
+
+.login, .logout {
+  color: #333333;
+  font-size: 15px;
+  padding: 0;
+  padding-bottom: 5px;
+  margin-right: 24px;
+  border: none;
+  border-bottom: 2px solid white;
+  transition: border-bottom 0.2s ease-in-out 0s;
+  /* vertical-align: middle; */
+  background-color: white;
+}
+
+.login:hover, .logout:hover {
+  border-bottom: 2px solid #40d9ac;
+}
+
+#logo {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  margin-left: 25px;
+}
+
+.dropdown-menu {
+  background-color: white;
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+  width: 275px;
+  position: absolute;
+  top: 60px;
+  right: 0px;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 20px;
+}
+
+.user-nav-dropdown-wrapper {
+  height: 50px;
+  width: 50px;
+  margin-right: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 21;
+}
+
+.dropdown-btn {
+  /* padding: 20px; */
+  border-bottom: 1px solid lightgrey;
+  text-align: start;
+  padding-left: 30px;
+  transition: padding-left 0.4s ease 0s;
+  cursor: pointer;
+}
+
+.dropdown-btn:hover {
+  /* padding: 20px; */
+  border-bottom: 1px solid lightgrey;
+  text-align: start;
+  padding-left: 50px;
+}
+
+.dropdown-btn:last-child {
+  border-bottom: none;
+}
+
+.dropdown-screen {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 20;
+}
+
+.user-nav-dropdown-icon {
+  height: 45px;
+}

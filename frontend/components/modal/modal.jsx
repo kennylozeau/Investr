@@ -12,7 +12,8 @@ class Modal extends React.Component {
     super(props);
 
     this.state = {
-      errClass: 'hiddenErrors'
+      errClass: 'hiddenErrors',
+      animation: ''
     }
 
     this.renderErrors = this.renderErrors.bind(this);
@@ -47,6 +48,11 @@ class Modal extends React.Component {
   handleModalClose() {
     const { closeModal, clearErrors } = this.props;
     closeModal();
+    // setTimeout(() => {
+    //   closeModal();
+    // }, 1500);
+    // this.setState({ animation: "fade-out" });
+    // setTimeout(() => this.setState({ animation: "" }), 2000);
   }
 
   render() {
@@ -70,9 +76,10 @@ class Modal extends React.Component {
       default:
         return null;
     }
+
     return (
-      <div className="modal-background" onClick={this.handleModalClose}>
-        <div className="modal-child" onClick={event => event.stopPropagation()}>
+      <div className={`modal-background ${this.state.animation}`} onClick={this.handleModalClose}>
+        <div className={`modal-child ${this.state.animation}`} onClick={event => event.stopPropagation()}>
           {component}
         </div>
         <div className="modal-errors">
