@@ -35394,5 +35394,7 @@ end
 
 kenny = User.create!(name: "Kenny", email: "kenny@kenny.com", password: "test123")
 apple = Company.find_by(symbol: "AAPL")
+mu = Company.find_by(symbol: "MU")
 
 Portfolio.create!(user_id: kenny.id, company_id: apple.id, quantity: 10)
+Portfolio.create!(user_id: kenny.id, company_id: mu.id, quantity: 60)

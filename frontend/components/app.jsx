@@ -5,7 +5,7 @@ import NavBarContainer from './navbar/navbar_container'
 import Modal from './modal/modal';
 import SplashPage from './splash_page/splash_page'
 import Footer from './footer/footer';
-import AccountContainer from './account/account_container';
+import DashboardContainer from './dashboard/dashboard_container';
 
 
 const App = (props) => {
@@ -16,7 +16,7 @@ const App = (props) => {
       <NavBarContainer />
 
       <AuthRoute exact path="/" component={SplashPage} />
-      <ProtectedRoute exact path="/account" component={AccountContainer} />
+      <ProtectedRoute exact path="/dashboard" component={DashboardContainer} />
 
       <Footer />
     </>
