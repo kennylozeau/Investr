@@ -29,7 +29,7 @@ class SignupForm extends React.Component {
     return (
       <>
         <header className="modal-header">
-          <h1>Join Stockflow</h1>
+          <h1>Join Investr</h1>
           {/* <h2>Discover camping in your area</h2> */}
         </header>
         <form id="signup-form" onSubmit={this.handleSubmit}>
@@ -48,7 +48,7 @@ class SignupForm extends React.Component {
             placeholder="Password"
             value={this.state.password}
             onChange={this.update('password')} />
-          <button>Join Stockflow</button>
+          <button>Join Investr</button>
         </form>
         <footer className="modal-footer">
           <h2>Already have an account? <button onClick={() => openModal({ window: 'login' })}>Log in!</button></h2>

@@ -31,14 +31,14 @@ class NavBar extends React.Component {
     if (this.props.currentUser) {
       return (
         <nav className="nav-header">
-          <h2 id="logo"><a href="/" >STOCKFLOW</a></h2>
+          <h2 id="logo"><a href="/" >INVESTR</a></h2>
           <button className="login" onClick={() => this.handleLogout()}>Log out</button>
         </nav>
       )
     } else {
       return (
         <nav className="nav-header">
-          <h2 id="logo"><Link to="/">STOCKFLOW</Link></h2>
+          <h2 id="logo"><Link to="/">INVESTR</Link></h2>
           <div>
             <button className="login" onClick={() => this.props.openModal({ window: 'login' })}>Log in</button>
             <button className="signup" onClick={() => this.props.openModal({ window: 'signup' })}>Sign up</button>
