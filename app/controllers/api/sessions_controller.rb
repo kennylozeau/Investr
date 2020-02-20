@@ -5,7 +5,7 @@ class Api::SessionsController < ApplicationController
 
     if @user
       login(@user)
-      render "pi/users/show"
+      render "api/users/show"
     else
       render json: ["Wrong Username/Password Combo"], status: 401
   end
