@@ -9,6 +9,7 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  balance         :float            default(5000.0)
 #
 
 require 'test_helper'
