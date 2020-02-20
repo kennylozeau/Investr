@@ -1,7 +1,7 @@
 import React from 'react';
-import { closeModal } from '../actions/modal_actions';
+import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-// import LoginFormContainer from './login_form_container';
+import LoginFormContainer from '../session/login_form_container';
 // import SignupFormContainer from './signup_form_container';
 // import DemoLoginContainer from './demo_login_container';
 import { clearErrors } from '../../actions/session_actions';
@@ -58,15 +58,15 @@ class Modal extends React.Component {
 
     let component;
     switch (modal.window) {
+      // case 'login':
+      //   component = <DemoLoginContainer />;
+      //   break;
       case 'login':
-        component = <DemoLoginContainer />;
-        break;
-      case 'email':
         component = <LoginFormContainer />
         break;
-      case 'signup':
-        component = <SignupFormContainer />;
-        break;
+      // case 'signup':
+      //   component = <SignupFormContainer />;
+      //   break;
       default:
         return null;
     }

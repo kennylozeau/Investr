@@ -8,7 +8,6 @@ const configureStore = (preloadedState = {}) => {
   if (process.env.NODE_ENV === 'production') {
     middleware = [thunk];
   }
-  console.log(middleware)
   return createStore(rootReducer, preloadedState, applyMiddleware(...middleware))
 };
 
