@@ -1,5 +1,4 @@
 class Api::SessionsController < ApplicationController
-
   def create
     @user = User.find_by_credentials(user_params[:email], user_params[:password])
 
@@ -8,6 +7,7 @@ class Api::SessionsController < ApplicationController
       render "api/users/show"
     else
       render json: ["Wrong Username/Password Combo"], status: 401
+    end
   end
 
   def destroy
