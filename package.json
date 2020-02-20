@@ -1,5 +1,5 @@
 {
-  "name": "Stockflow",
+  "name": "Investr",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.8.4",
@@ -30,13 +30,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kennylozeau/Stockflow.git"
+    "url": "git+https://github.com/kennylozeau/Investr.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kennylozeau/Stockflow/issues"
+    "url": "https://github.com/kennylozeau/Investr/issues"
   },
-  "homepage": "https://github.com/kennylozeau/Stockflow#readme"
+  "homepage": "https://github.com/kennylozeau/Investr#readme"
 }

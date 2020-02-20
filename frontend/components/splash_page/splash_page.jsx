@@ -3,7 +3,7 @@ import React from 'react';
 const SplashPage = (props) => {
   return (
     <>
-      <h1>Stockflow Splash Page</h1>
+      <h1>Investr Splash Page</h1>
     </>
   );
 };
