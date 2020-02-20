@@ -10,4 +10,12 @@
 #
 
 class Company < ApplicationRecord
+
+  validates :symbol, :name, presence: true
+
+  has_many :portfolios,
+    class_name: :Portfolio,
+    primary_key: :id,
+    foreign_key: :company_id
+
 end

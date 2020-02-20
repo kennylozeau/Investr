@@ -35391,3 +35391,8 @@ companies = [
 companies.each do |company|
   Company.create!(symbol: company[:symbol], name: company[:name])
 end
+
+kenny = User.create!(name: "Kenny", email: "kenny@kenny.com", password: "test123")
+apple = Company.find_by(symbol: "AAPL")
+
+Portfolio.create!(user_id: kenny.id, company_id: apple.id, quantity: 10)

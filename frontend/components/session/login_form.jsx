@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -14,7 +15,10 @@ class LoginForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.login(this.state)
-      .then(() => this.props.closeModal());
+      .then(() => {
+        this.props.closeModal();
+        this.props.history.push('/account');
+      });
   }
 
   update(field) {
@@ -50,4 +54,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);
