@@ -16,7 +16,10 @@ class NavBar extends React.Component {
 
   handleLogout() {
     this.props.logout()
-      .then(this.mouseLeave());
+      .then(() => {
+        this.mouseLeave();
+        this.props.history.push('/');
+      });
   }
 
   mouseEnter() {

@@ -24,12 +24,4 @@ class Portfolio < ApplicationRecord
     primary_key: :id,
     foreign_key: :company_id
 
-  has_one :symbol,
-    through: :company,
-    source: :symbol
-
-  has_one :name,
-    through: :company,
-    source: :name
-
 end

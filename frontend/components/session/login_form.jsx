@@ -15,10 +15,7 @@ class LoginForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.login(this.state)
-      .then(() => {
-        this.props.closeModal();
-        this.props.history.push('/account');
-      });
+      .then(this.props.closeModal());
   }
 
   update(field) {
