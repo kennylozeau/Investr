@@ -1,6 +1,7 @@
 import React from 'react';
 import PortfolioContainer from '../portfolio/portfolio_container';
 import TransactionsContainer from '../transactions/transactions_container';
+import Trader from '../trader/trader';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -12,9 +13,11 @@ class Dashboard extends React.Component {
   }
 
   render() {
+    
     return (
       <>
         {this.props.dashboardPanel === "portfolio" ? <PortfolioContainer /> : <TransactionsContainer /> }
+        <Trader />
       </>
     )
   }

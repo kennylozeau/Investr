@@ -6,7 +6,6 @@ class Transactions extends React.Component {
   }
 
   formatDate(date) {
-    debugger
     const formattedDate = new Date(date);
     const dateString = `on ${formattedDate.toLocaleDateString()} at ${formattedDate.toLocaleTimeString()}`
     return dateString;
