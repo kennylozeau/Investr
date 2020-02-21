@@ -1,4 +1,5 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_TRANSACTION } from '../actions/transaction_actions';
 
 const companiesReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -9,6 +10,9 @@ const companiesReducer = (state = {}, action) => {
       if (action.payload.companies) {
         newState = action.payload.companies;
       };
+      return newState;
+    case RECEIVE_TRANSACTION:
+      newState[action.payload.company.id] = action.payload.company;
       return newState;
     default:
       return state;

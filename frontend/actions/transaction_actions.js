@@ -10,10 +10,10 @@ const receiveAllTransactions = transactions => {
   };
 };
 
-const receiveTransaction = transaction => {
+const receiveTransaction = payload => {
   return {
     type: RECEIVE_TRANSACTION,
-    transaction
+    payload
   };
 };
 

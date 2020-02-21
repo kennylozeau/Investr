@@ -4,13 +4,13 @@ import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 const transactionsReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
-
+  
   switch (action.type) {
     case RECEIVE_ALL_TRANSACTIONS:
       newState = action.transactions;
       return newState;
     case RECEIVE_TRANSACTION:
-      newState[action.transaction.id] = action.transaction;
+      newState[action.payload.transaction.id] = action.payload.transaction;
       return newState;
     case RECEIVE_CURRENT_USER:
       if (action.payload.transactions) {
