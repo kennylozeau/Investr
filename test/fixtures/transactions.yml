@@ -7,7 +7,7 @@
 #  company_id :integer          not null
 #  price      :float            not null
 #  quantity   :integer          not null
-#  type       :string           not null
+#  trade_type :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
