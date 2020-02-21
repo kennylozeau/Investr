@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
 
   def show
-    @user = User.includes(:portfolios, :companies).find(params[:id])
+    @user = User.includes(:portfolios, :companies, :transactions).find(params[:id])
     render :show
   end
 
