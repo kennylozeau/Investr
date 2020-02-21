@@ -35398,3 +35398,5 @@ mu = Company.find_by(symbol: "MU")
 
 Portfolio.create!(user_id: kenny.id, company_id: apple.id, quantity: 10)
 Portfolio.create!(user_id: kenny.id, company_id: mu.id, quantity: 60)
+
+Transaction.create!(user_id: kenny.id, company_id: apple.id, quantity: 10, price: 300.0, type: "buy")
