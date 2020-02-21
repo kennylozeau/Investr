@@ -13,4 +13,18 @@
 #
 
 class Transaction < ApplicationRecord
+
+  validates :user_id, :company_id, :price, :quantity, :quantity, presence: true
+  validates :quantity, inclusion: { in: %(buy sell) }
+
+  belongs_to :user,
+    class_name: :User,
+    primary_key: :id,
+    foreign_key: :user_id
+
+  belongs_to :company,
+    class_name: :Company,
+    primary_key: :id,
+    foreign_key: :company_id
+
 end

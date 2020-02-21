@@ -18,4 +18,9 @@ class Company < ApplicationRecord
     primary_key: :id,
     foreign_key: :company_id
 
+  has_many :transactions,
+    class_name: :Transaction,
+    primary_key: :id,
+    foreign_key: :company_id
+
 end
