@@ -5,9 +5,9 @@ class Portfolio extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    this.props.fetchUser(this.props.currentUser.id);
-  }
+  // componentDidMount() {
+  //   this.props.fetchUser(this.props.currentUser.id);
+  // }
 
   render() {
 

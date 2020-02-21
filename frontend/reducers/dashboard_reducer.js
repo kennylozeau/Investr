@@ -9,7 +9,7 @@ const modalReducer = (state = _nullState, action) => {
   let newState = Object.assign({}, state);
   switch (action.type) {
     case SWITCH_PANEL:
-      newState = action.panel;
+      newState["window"] = action.panel;
       return newState;
     default:
       return state;
