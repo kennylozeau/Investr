@@ -10,7 +10,7 @@ const mapStateToProps = state => {
 
   return {
     companies: companyObj,
-    transactions: state.entities
+    transactions: Object.values(state.entities.transactions)
   }
 };
 

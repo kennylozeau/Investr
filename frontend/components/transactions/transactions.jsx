@@ -7,13 +7,13 @@ class Transactions extends React.Component {
 
   render() {
 
-    const { companies } = this.props;
-
-    const assetList = assets.map(asset => {
+    const { transactions, companies } = this.props;
+    
+    const transactionsList = transactions.map(transaction => {
       return (
         <li
-          key={asset.company_id}>
-          {companies[asset.company_id].symbol} - {asset.quantity} shares
+          key={transaction.company_id}>
+          {companies[transaction.company_id].symbol} - {transaction.quantity} shares
         </li>
       )
     });
@@ -21,7 +21,7 @@ class Transactions extends React.Component {
     return (
       <>
         <ul>
-          {assetList}
+          {transactionsList}
         </ul>
       </>
     )
