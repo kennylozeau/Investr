@@ -21,7 +21,7 @@ end
 json.set! "transactions" do
   @user.transactions.each do |transaction|
     json.set! transaction.id do
-      json.extract! transaction, :id, :user_id, :company_id, :price, :quantity, :trade_type
+      json.extract! transaction, :id, :user_id, :company_id, :price, :quantity, :trade_type, :created_at
     end
   end
 end

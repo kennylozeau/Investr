@@ -1,1 +1,1 @@
-json.extract! transaction, :id, :user_id, :company_id, :price, :quantity, :trade_type
+json.extract! transaction, :id, :user_id, :company_id, :price, :quantity, :trade_type, :created_at
