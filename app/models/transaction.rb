@@ -27,4 +27,8 @@ class Transaction < ApplicationRecord
     primary_key: :id,
     foreign_key: :company_id
 
+  has_many :portfolios,
+    through: :user,
+    source: :portfolios
+
 end

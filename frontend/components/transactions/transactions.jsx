@@ -15,7 +15,7 @@ class Transactions extends React.Component {
 
     const { transactions, companies } = this.props;
 
-    const transactionsList = transactions.map(transaction => {
+    const transactionsList = transactions.reverse().map(transaction => {
       return (
         <li
           key={transaction.created_at}>

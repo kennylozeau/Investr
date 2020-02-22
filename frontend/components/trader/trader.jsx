@@ -15,14 +15,15 @@ class Trader extends React.Component {
     event.preventDefault();
 
     let transaction = {
-      user_id: this.props.currentUserId,
       symbol: this.state.symbol,
       price: 25.0,
       quantity: this.state.quantity,
       trade_type: 'buy'
     };
 
-    this.props.createTransaction(transaction);
+    this.props.createTransaction(transaction)
+      .then(() => this.setState({symbol: '', quantity: ''}));
+
   }
 
   update(field) {

@@ -63,4 +63,33 @@ class User < ApplicationRecord
   def ensure_session_token
     self.session_token ||= self.class.generate_session_token
   end
+
+  def purchase(symbol, price, quantity)
+    company = Company.find_by(symbol: symbol)
+    if self.balance >= price * quantity
+      transaction = self.transactions.new(company_id: company.id, price: price, quantity: quantity, trade_type: "buy")
+      portfolio = self.portfolios.find_by(company_id: transaction.company_id)
+
+      unless portfolio.nil?
+        updatedQty = portfolio.quantity + transaction.quantity
+        portfolio.quantity = updatedQty
+      else
+        portfolio = self.portfolios.new(quantity: transaction.quantity, company_id: transaction.company_id)
+      end
+
+      if transaction.valid? && portfolio.valid?
+        self.balance -= price * quantity
+        self.save
+        transaction.save
+        portfolio.save
+        return transaction
+      else
+        self.errors.full_messages.push("Transaction failed")
+        return nil
+      end
+    else
+      self.errors.full_messages.push("Balance is too low")
+      return nil
+    end
+  end
 end
