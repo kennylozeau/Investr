@@ -11,6 +11,10 @@ class Trader extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // validateSymbol(symbol) {
+    
+  // }
+
   handleSubmit(event) {
     event.preventDefault();
 
@@ -21,9 +25,17 @@ class Trader extends React.Component {
       trade_type: 'buy'
     };
 
-    this.props.createTransaction(transaction)
-      .then(() => this.setState({symbol: '', quantity: ''}));
+    this.props.fetchStock(this.state.symbol).then(stock => {
+      let transaction = {
+        symbol: stock.symbol,
+        price: stock.latestPrice,
+        quantity: this.state.quantity,
+        trade_type: 'buy'
+      };
 
+      this.props.createTransaction(transaction)
+        .then(() => this.setState({symbol: '', quantity: ''}));
+    }, errMsg => console.log(errMsg.responseJSON));
   }
 
   update(field) {
