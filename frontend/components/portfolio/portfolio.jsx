@@ -13,6 +13,8 @@ class Portfolio extends React.Component {
 
     const { assets, companies } = this.props;
     
+    const symbols = assets.map(asset => companies[asset.company_id].symbol)
+
     const assetList = assets.map(asset => {
       return (
         <li

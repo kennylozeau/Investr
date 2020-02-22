@@ -4,7 +4,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 // IMPORTS FOR TESTING
-import { fetchStock } from './util/exchange_api_util';
+import { fetchStock, fetchAllStocks } from './util/exchange_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
@@ -27,9 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // FOR TESTING PURPOSES ONLY
   // window.getState = store.getState;
-  window.dispatch = store.dispatch;
+  // window.dispatch = store.dispatch;
   // window.signup = signup;
   // window.login = login;
   // window.logout = logout;
   window.fetchStock = fetchStock;
+  window.fetchAllStocks = fetchAllStocks;
 });
