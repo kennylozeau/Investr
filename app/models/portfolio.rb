@@ -12,7 +12,11 @@
 
 class Portfolio < ApplicationRecord
 
+  attr_reader :symbol
+
   validates :user_id, :company_id, :quantity, presence: true
+
+  after_initialize :symbol=
 
   belongs_to :user,
     class_name: :User,
@@ -23,5 +27,9 @@ class Portfolio < ApplicationRecord
     class_name: :Company,
     primary_key: :id,
     foreign_key: :company_id
+
+  def symbol=()
+    @symbol = self.company.symbol
+  end
 
 end

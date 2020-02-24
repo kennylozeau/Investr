@@ -5,7 +5,7 @@ end
 json.set! "portfolios" do
   @user.portfolios.each do |portfolio|
     json.set! portfolio.id do
-      json.extract! portfolio, :id, :user_id, :company_id, :quantity
+      json.extract! portfolio, :id, :user_id, :company_id, :quantity, :symbol
     end
   end
 end

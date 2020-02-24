@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import Portfolio from './portfolio';
 import { fetchUser } from '../../actions/session_actions';
+import { fetchAllStocks } from '../../actions/exchange_actions';
+import { fetchStock } from '../../util/exchange_api_util';
 
 const mapStateToProps = state => {
   let companyObj = {};
@@ -12,13 +14,16 @@ const mapStateToProps = state => {
   return {
     assets: Object.values(state.entities.portfolios),
     companies: companyObj,
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    market: state.entities.market
   }
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchUser: userId => dispatch(fetchUser(userId))
+    fetchUser: userId => dispatch(fetchUser(userId)),
+    fetchStock,
+    fetchAllStocks: symbols => dispatch(fetchAllStocks(symbols))
   };
 };
 

@@ -5,17 +5,38 @@ class Portfolio extends React.Component {
     super(props);
   }
 
-  // componentDidMount() {
-  //   this.props.fetchUser(this.props.currentUser.id);
-  // }
+  componentDidMount() {
+    const { assets, companies } = this.props;
+    const symbols = assets.map(asset => companies[asset.company_id].symbol)
+
+    if (symbols.length > 0) {
+      this.props.fetchAllStocks(symbols);
+    };
+  }
+
+  componentDidUpdate() {
+    const { assets, companies } = this.props;
+    const symbols = assets.map(asset => companies[asset.company_id].symbol)
+
+    if (symbols.length > 0 && Object.entries(this.props.market).length === 0) {
+      this.props.fetchAllStocks(symbols);
+    };
+  }
 
   render() {
 
+    let assetList = []
     const { assets, companies } = this.props;
     
-    const symbols = assets.map(asset => companies[asset.company_id].symbol)
+    // const symbols = assets.map(asset => companies[asset.company_id].symbol)
+    
+    // if (symbols.count > 0) {
+    //   this.props.fetchAllStocks(symbols).then(stocks => {
+    //     console.log(stocks);
+    //   }, errMsg => console.log(errMsg.responseJSON));
+    // }
 
-    const assetList = assets.map(asset => {
+    assetList = assets.map(asset => {
       return (
         <li
           key={asset.company_id}>
