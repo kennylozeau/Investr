@@ -1,5 +1,5 @@
 import { RECEIVE_ALL_TRANSACTIONS, RECEIVE_TRANSACTION } from '../actions/transaction_actions';
-import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER } from '../actions/session_actions';
 
 const transactionsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -16,6 +16,9 @@ const transactionsReducer = (state = {}, action) => {
       if (action.payload.transactions) {
         newState = action.payload.transactions;
       };
+      return newState;
+    case LOGOUT_CURRENT_USER:
+      newState = {};
       return newState;
     default:
       return state;

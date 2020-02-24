@@ -7,7 +7,8 @@ import { switchPanel } from '../../actions/dashboard_actions';
 const mapStateToProps = ({ entities, session, ui }) => {
   return {
     currentUser: entities.users[session.id],
-    currentPanel: ui.dashboard.window
+    currentPanel: ui.dashboard.window,
+    portfolios: Object.values(entities.portfolios)
   };
 };
 

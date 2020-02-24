@@ -4,6 +4,7 @@ class Api::TransactionsController < ApplicationController
 
   def index
     @transactions = current_user.transactions.all
+    # debugger
     # @transactions = Transaction.all
     render :index
   end
@@ -15,7 +16,7 @@ class Api::TransactionsController < ApplicationController
 
   def create
     @transaction = current_user.purchase(transaction_params[:symbol], transaction_params[:price].to_f, transaction_params[:quantity].to_i)
-    
+    # debugger
     if @transaction
       @user = current_user
       @portfolio = current_user.portfolios.find_by(company_id: @transaction.company_id)

@@ -25,25 +25,29 @@ class Portfolio extends React.Component {
 
   render() {
 
-    let assetList = []
+    let assetList = [];
+    let stocksToFetch = [];
     const { assets, companies } = this.props;
-    
-    // const symbols = assets.map(asset => companies[asset.company_id].symbol)
-    
-    // if (symbols.count > 0) {
-    //   this.props.fetchAllStocks(symbols).then(stocks => {
-    //     console.log(stocks);
-    //   }, errMsg => console.log(errMsg.responseJSON));
-    // }
 
     assetList = assets.map(asset => {
+
+      let priceInfo = "@ loading price - loading total value";
+
+      if (asset.latestPrice) {
+        priceInfo = `@ \$${asset.latestPrice.toFixed(2)} per share - \$${(asset.quantity * asset.latestPrice).toFixed(2)}`;
+      } else if (Object.entries(this.props.market).length > 0) {
+        // this.props.fetchStock(asset.symbol);
+        stocksToFetch.push(companies[asset.company_id].symbol);
+      };
+      
       return (
         <li
           key={asset.company_id}>
-            {companies[asset.company_id].symbol} - {asset.quantity} shares
+            {companies[asset.company_id].symbol} - {asset.quantity} shares {priceInfo}
         </li>
       )
     });
+    if (stocksToFetch.length > 0) {this.props.fetchAllStocks(stocksToFetch)};
 
     return (
       <>

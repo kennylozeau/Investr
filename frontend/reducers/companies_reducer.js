@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER } from '../actions/session_actions';
 import { RECEIVE_TRANSACTION } from '../actions/transaction_actions';
 
 const companiesReducer = (state = {}, action) => {
@@ -13,6 +13,9 @@ const companiesReducer = (state = {}, action) => {
       return newState;
     case RECEIVE_TRANSACTION:
       newState[action.payload.company.id] = action.payload.company;
+      return newState;
+    case LOGOUT_CURRENT_USER:
+      newState = {};
       return newState;
     default:
       return state;

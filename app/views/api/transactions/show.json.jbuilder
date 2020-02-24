@@ -11,5 +11,5 @@ json.set! "user" do
 end
 
 json.set! "portfolio" do
-  json.extract! @portfolio, :id, :quantity
+  json.extract! @portfolio, :id, :user_id, :company_id, :quantity, :symbol
 end
