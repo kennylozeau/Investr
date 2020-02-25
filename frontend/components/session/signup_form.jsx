@@ -34,6 +34,7 @@ class SignupForm extends React.Component {
         </header>
         <form id="signup-form" onSubmit={this.handleSubmit}>
           <input
+            autoFocus
             type="text"
             placeholder="Name"
             value={this.state.name}

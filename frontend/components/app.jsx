@@ -20,7 +20,9 @@ const App = (props) => {
       <AuthRoute exact path="/" component={SplashPage} />
       <ProtectedRoute exact path="/dashboard" component={DashboardContainer} />
 
-      <Footer />
+      <div className="footer-container">
+        <Footer />
+      </div>
     </>
   );
 };

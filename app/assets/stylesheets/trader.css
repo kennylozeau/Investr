@@ -1,5 +1,6 @@
 .trader-wrapper {
-  width: 25%;
+  width: 30%;
+  min-height: 98vh;
 }
 
 .trade-form {
@@ -9,16 +10,8 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 200px;
+  /* height: 200px; */
   border: 1px solid gray;
-}
-
-.trade-form > input {
-  border: 1px solid orange;
-}
-
-.trade-form > button {
-  border: 1px solid green;
 }
 
 .invalid-symbol {
@@ -27,4 +20,61 @@
 
 .invalid-qty {
   border: 1px solid red;
+}
+
+.trade-form h3 {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.trader-input {
+  height: 40px;
+  border: 1px solid gray;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 2px;
+  margin: 15px 0 0;
+  width: 100%;
+  padding: 0;
+}
+
+.buy-button {
+  height: 40px;
+  width: 80%;
+  margin: 15px 0;
+  background-color: #29bdf8;
+  font-size: 16px;
+  color: white;
+  padding: 0;
+  border: 1px solid #29bdf8;
+  border-radius: 2px;
+}
+
+.buy-button:hover {
+  border: 1px solid #00a3e4;
+}
+
+.trader-input:focus {
+  border: 1px solid gray;
+}
+
+.trader-company {
+  font-size: 12px;
+}
+
+.trader-price {
+  font-size: 14px;
+}
+
+.trader-error {
+  color: red;
+}
+
+.input-wrapper {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
 }
