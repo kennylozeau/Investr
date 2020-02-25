@@ -18,29 +18,18 @@
 }
 
 .signup {
-  /* background-color: red; */
-  /* box-sizing: border-box; */
-  /* SET DISPLAY TO INLINE-BLOCK WHEN YOU KNOW HOW TO CENTER IT (GET HEIGHT BACK) */
   display: inline-block;
-  border: 3px solid #40d9ac;
-  /* width: 52px; */
-  /* Peter helped me: Turn off height and add more vertical padding */
-  /* inline elements don't take vertical padding into account */
-  /* height: 25px; */
-  /* padding: 7px 12px; */
+  border: 3px solid #29bdf8;
   padding: 12px 12px;
   margin: 10px;
-  /* margin-left: 25px; */
   font-size: 15px;
-  color: #40d9ac;
+  color: #29bdf8;
   background-color: white;
   transition: background-color 0.4s ease 0s, color 0.4s ease 0s;
-  /* vertical-align: middle; */
-  /* WHY DOES THIS NOT WORK? */
 }
 
 .signup:hover {
-  background-color: #73dfb7;
+  background-color: #82d3f3;
   color: white;
 }
 
@@ -58,7 +47,7 @@
 }
 
 .login:hover, .logout:hover {
-  border-bottom: 2px solid #40d9ac;
+  border-bottom: 2px solid #29bdf8;
 }
 
 #logo {

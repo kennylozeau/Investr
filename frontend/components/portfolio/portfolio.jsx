@@ -35,7 +35,7 @@ class Portfolio extends React.Component {
       let valueInfo = "loading total value"
 
       if (asset.latestPrice) {
-        priceInfo = `\$${asset.latestPrice.toFixed(2)} per share`;
+        priceInfo = `\$${asset.latestPrice.toFixed(2)}`;
         valueInfo = `\$${(asset.quantity * asset.latestPrice).toFixed(2)}`;
       } else if (Object.entries(this.props.market).length > 0) {
         stocksToFetch.push(companies[asset.company_id].symbol);
@@ -46,8 +46,9 @@ class Portfolio extends React.Component {
           <td className="col-sym">{companies[asset.company_id].symbol}</td>
           <td className="col-qty">{asset.quantity}</td>
           <td className="col-shares">shares</td>
-          <td className="col-price">{priceInfo}</td>
-          <td className="col-price">{valueInfo}</td>
+          <td className="port-col-price">{priceInfo}</td>
+          <td className="col-shares">per share</td>
+          <td className="port-col-price">{valueInfo}</td>
         </tr>
       )
     });
@@ -57,7 +58,7 @@ class Portfolio extends React.Component {
       <>
         <table className="list-wrapper">
           <tr>
-            <th colspan="5">Portfolio Summary</th>
+            <th colspan="6">Portfolio Summary</th>
           </tr>
           {assetList}
         </table>
