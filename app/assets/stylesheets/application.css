@@ -16,6 +16,7 @@
  *= require footer
  *= require dashboard
  *= require splash
+ *= require trader
  = require_tree .
  *= require_self
  */
@@ -27,5 +28,13 @@
 
  body {
    letter-spacing: 0.5px;
-   font-family: 'Archivo', sans-serif;
+   font-family: 'Ariel', sans-serif;
+ }
+
+ .red {
+   color: red;
+ }
+
+ .green {
+   color: green;
  }

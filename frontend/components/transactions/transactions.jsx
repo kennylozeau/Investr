@@ -17,11 +17,7 @@ class Transactions extends React.Component {
 
     const transactionsList = transactions.reverse().map(transaction => {
       return (
-        // <li
-        //   key={transaction.created_at}>
-        //   {companies[transaction.company_id].symbol} - {transaction.quantity} shares @ ${transaction.price.toFixed(2)} {this.formatDate(transaction.created_at)}
-        // </li>
-        <tr>
+        <tr key={transaction.created_at}>
           <td className="col-sym">{companies[transaction.company_id].symbol}</td>
           <td className="col-qty">{transaction.quantity}</td>
           <td className="col-shares">shares</td>
@@ -32,14 +28,14 @@ class Transactions extends React.Component {
     });
 
     return (
-      <>
-        <table className="list-wrapper">
+      <table className="list-wrapper">
+        <tbody>
           <tr>
-            <th colspan="5">Transaction History</th>
+            <th colSpan="5">Transaction History</th>
           </tr>
           {transactionsList}
-        </table>
-      </>
+        </tbody>
+      </table>
     )
   }
 };

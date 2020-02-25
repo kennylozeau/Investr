@@ -13,7 +13,9 @@ const App = (props) => {
     <>
       <Modal />
 
-      <NavBarContainer />
+      <div className="navbar-container">
+        <NavBarContainer />
+      </div>
 
       <AuthRoute exact path="/" component={SplashPage} />
       <ProtectedRoute exact path="/dashboard" component={DashboardContainer} />

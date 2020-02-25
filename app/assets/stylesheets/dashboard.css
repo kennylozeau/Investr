@@ -1,20 +1,12 @@
 .dashboard-wrapper {
   display: flex;
   justify-content: space-around;
+  margin-top: 80px;
 }
 
 .list-wrapper {
-  width: 50%;
+  width: 60%;
   cursor: default;
-}
-
-.trader-wrapper {
-  width: 25%;
-}
-
-.trade-form {
-  display: flex;
-  flex-direction: column;
 }
 
 .list-wrapper td {

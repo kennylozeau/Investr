@@ -1,0 +1,30 @@
+.trader-wrapper {
+  width: 25%;
+}
+
+.trade-form {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 200px;
+  border: 1px solid gray;
+}
+
+.trade-form > input {
+  border: 1px solid orange;
+}
+
+.trade-form > button {
+  border: 1px solid green;
+}
+
+.invalid-symbol {
+  border: 1px solid red;
+}
+
+.invalid-qty {
+  border: 1px solid red;
+}
