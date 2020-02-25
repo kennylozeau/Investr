@@ -89,7 +89,7 @@ class Trader extends React.Component {
           companyName: '',
           quantityFeedback: ''
         }));
-    }, errMsg => console.log(errMsg.responseJSON));
+    }, errMsg => errMsg.responseJSON);
   }
 
   updateSymbol(field) {
