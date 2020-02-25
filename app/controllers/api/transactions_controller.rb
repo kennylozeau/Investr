@@ -13,6 +13,7 @@ class Api::TransactionsController < ApplicationController
   end
 
   def create
+    debugger
     @transaction = current_user.purchase(transaction_params[:symbol], transaction_params[:price].to_f, transaction_params[:quantity].to_i)
 
     if @transaction
