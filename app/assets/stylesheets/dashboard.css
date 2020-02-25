@@ -1,0 +1,51 @@
+.dashboard-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.list-wrapper {
+  width: 50%;
+  cursor: default;
+}
+
+.trader-wrapper {
+  width: 25%;
+}
+
+.trade-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-wrapper td {
+  padding: 5px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.list-wrapper tr:hover {
+  background-color: rgb(161, 217, 250);
+}
+
+.list-wrapper tr:first-child:hover {
+  background-color: white;
+}
+
+.col-sym {
+  text-align: center;
+}
+
+.col-qty {
+  text-align: right;
+}
+
+.col-shares {
+  text-align: center;
+}
+
+.col-price {
+  text-align: center;
+}
+
+.col-date {
+  text-align: center;
+}

@@ -51,7 +51,7 @@ class Trader extends React.Component {
     // }
 
     return (
-      <div>
+      <div className="trader-wrapper">
         <form className="trade-form" onSubmit={this.handleSubmit}>
           <input
             type="text"

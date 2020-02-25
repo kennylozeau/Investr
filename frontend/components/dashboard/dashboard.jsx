@@ -15,10 +15,10 @@ class Dashboard extends React.Component {
   render() {
     
     return (
-      <>
+      <div className="dashboard-wrapper">
         {this.props.dashboardPanel === "portfolio" ? <PortfolioContainer /> : <TransactionsContainer /> }
         <TraderContainer />
-      </>
+      </div>
     )
   }
 }

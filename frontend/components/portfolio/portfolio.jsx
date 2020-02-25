@@ -31,29 +31,36 @@ class Portfolio extends React.Component {
 
     assetList = assets.map(asset => {
 
-      let priceInfo = "@ loading price - loading total value";
+      let priceInfo = "loading price";
+      let valueInfo = "loading total value"
 
       if (asset.latestPrice) {
-        priceInfo = `@ \$${asset.latestPrice.toFixed(2)} per share - \$${(asset.quantity * asset.latestPrice).toFixed(2)}`;
+        priceInfo = `\$${asset.latestPrice.toFixed(2)} per share`;
+        valueInfo = `\$${(asset.quantity * asset.latestPrice).toFixed(2)}`;
       } else if (Object.entries(this.props.market).length > 0) {
-        // this.props.fetchStock(asset.symbol);
         stocksToFetch.push(companies[asset.company_id].symbol);
       };
       
       return (
-        <li
-          key={asset.company_id}>
-            {companies[asset.company_id].symbol} - {asset.quantity} shares {priceInfo}
-        </li>
+        <tr>
+          <td className="col-sym">{companies[asset.company_id].symbol}</td>
+          <td className="col-qty">{asset.quantity}</td>
+          <td className="col-shares">shares</td>
+          <td className="col-price">{priceInfo}</td>
+          <td className="col-price">{valueInfo}</td>
+        </tr>
       )
     });
     if (stocksToFetch.length > 0) {this.props.fetchAllStocks(stocksToFetch)};
 
     return (
       <>
-        <ul>
+        <table className="list-wrapper">
+          <tr>
+            <th colspan="5">Portfolio Summary</th>
+          </tr>
           {assetList}
-        </ul>
+        </table>
       </>
     )
   }
