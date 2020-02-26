@@ -3,6 +3,14 @@
   min-height: 98vh;
 }
 
+@media screen and (max-width: 981px) {
+  .trader-wrapper {
+    min-height: 0;
+    margin-bottom: 20px;
+    width: 50%;
+  }
+}
+
 .trade-form {
   position: sticky;
   top: 100px;

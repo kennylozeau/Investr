@@ -9,6 +9,17 @@
   cursor: default;
 }
 
+@media screen and (max-width: 981px) {
+  .dashboard-wrapper {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .list-wrapper {
+    width: 100%;
+  }
+}
+
 .list-wrapper td {
   padding: 5px;
   border-bottom: 1px solid #dddddd;
