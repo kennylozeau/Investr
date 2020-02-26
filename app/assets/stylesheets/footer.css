@@ -8,14 +8,10 @@
 }
 
 .nav-footer {
-  /* position: sticky;
-  top: calc(100vh - 40px); */
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  /* margin-top: 20px;
-  margin-bottom: 20px; */
   height: 30px;
   border-top: 1px solid lightgrey;
   padding: 10px;
@@ -23,5 +19,9 @@
 
 .github {
   font-size: 16px;
+  margin-right: 0px;
+}
+
+.tagline {
   margin-right: 0px;
 }

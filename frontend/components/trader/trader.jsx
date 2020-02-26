@@ -110,7 +110,10 @@ class Trader extends React.Component {
 
     let disableTrade = true;
 
-    if (this.state.symbol && this.state.quantity && (this.state.quantity * this.state.symbolPrice) < this.props.currentUser.balance) {
+    const { symbol, quantity, symbolPrice } = this.state;
+    const cost = quantity * symbolPrice;
+
+    if (symbol && quantity && cost < this.props.currentUser.balance) {
       disableTrade = false;
     }
 
